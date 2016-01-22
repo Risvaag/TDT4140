@@ -1,1 +1,1 @@
-"# TDT4140" 
+Repo for gruppe 31 & 34 i TDT4140 programmvareutvikling
