@@ -1,1 +1,1 @@
-Repo for gruppe 31 & 34 i TDT4140 programmvareutvikling
+Repo for groups 31 & 34 in TDT4140 Software Engineering
