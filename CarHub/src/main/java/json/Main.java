@@ -1,5 +1,7 @@
 package json;
 
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
+
 import java.net.URL;
 
 /**
@@ -18,10 +20,16 @@ public class Main {
             //This is a simple JSON example file - works
             URL urlJSONExample = new URL("http://jsonview.com/example.json");
 
+            //filepath to local json car-info
+            String filepath = "src/main/java/json/sampledata.json";
+
             //
-            jReader.readUrlToString(urlJSONExample);
+            String vehicleSpeed = jReader.getVehicleSpeed(filepath);
+
+            System.out.println(vehicleSpeed);
+
         } catch (Exception e) {
-            System.out.print(e.getMessage());
+            System.out.print(e.getCause());
         }
     }
 }
