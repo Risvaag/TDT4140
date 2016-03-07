@@ -46,13 +46,38 @@
     margin: 60px 2px 2px 10px;
 }
 
+/** Speed */
 #speed{
     text-align: center;
     margin: -100px 2px 2px 30px;
 }
-
-#text-speed{
+.text{
     line-height: 50px;
-
 }
+
+/** Sensors */
+.front{
+    margin: -100px 2px 2px -15px;
+    text-align: center;
+}
+.rear{
+    margin: -70px 2px 2px 270px;
+}
+
+/**Fuel */
+
+.fuel{
+    margin: -100px 2px 2px -15px;
+    text-align: center;
+}
+
+.gasStation{
+    margin-left: 270px;
+    margin-top: -70px;
+}
+
+#nearestGasStation{
+    margin-left: 35px;
+}
+
 
