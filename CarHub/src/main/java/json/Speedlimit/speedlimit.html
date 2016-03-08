@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="sampledata.js"></script>
+	<script>
+
+		function viewSpeed(index) {
+			if(index > data.length){
+					return;
+			}
+			if(data[index].name == "vehicle_speed"){
+				pent_tall = Math.round((data[index].value*1.609344)*10)/10;
+				document.getElementById("display").innerHTML = pent_tall;
+				setTimeout(function(){
+					viewSpeed(index+1);
+				}, 100);
+			}else{
+				viewSpeed(index+1);
+			}
+		}
+	</script>
+</head>
+<body>
+	<body onload="viewSpeed(0)">
+
+	<h2>Speedlimit</h2>
+
+	<p id="display"></p>
+
+</body>
+</html>
