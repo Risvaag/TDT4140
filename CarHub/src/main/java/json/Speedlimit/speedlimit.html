@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script type="text/javascript" src="sampledata.js"></script>
 	<script>
 
 		function viewSpeed(index) {
+			var speedlimit = 20;
 			if(index > data.length){
 					return;
 			}
-			if(data[index].name == "vehicle_speed"){
+			if(data[index].name == "vehicle_speed" && data[index].value != 0){
 				pent_tall = Math.round((data[index].value*1.609344)*10)/10;
 				document.getElementById("display").innerHTML = pent_tall;
 				setTimeout(function(){
 					viewSpeed(index+1);
-				}, 100);
+				}, 50);
+				if(pent_tall <= (speedlimit-5)){
+					document.getElementById("display").style.color="black";
+					document.getElementById("notification").innerHTML = "";
+					document.getElementById("notification").innerHTML = "Kjør fortere!";
+				}else if(pent_tall > (speedlimit-5) && pent_tall <= speedlimit){
+					document.getElementById("display").style.color="green";
+					document.getElementById("notification").innerHTML = "";
+				}else if(pent_tall > 20 && pent_tall <= 24){
+					document.getElementById("display").style.color="orange";
+					document.getElementById("notification").innerHTML = "Du er over fartsgrensen";
+				}else{
+					document.getElementById("display").style.color="red";
+					document.getElementById("notification").innerHTML = "SENK FARTEN!";
+				}
 			}else{
 				viewSpeed(index+1);
 			}
@@ -23,9 +40,11 @@
 <body>
 	<body onload="viewSpeed(0)">
 
-	<h2>Speedlimit</h2>
+	<p>Speedlimit: 20 km/h</p>
 
-	<p id="display"></p>
+	<p>Your Speed: <span id="display"></span> km/h</p>
+
+	<p id="notification"><p>
 
 </body>
 </html>
