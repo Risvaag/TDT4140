@@ -8,8 +8,8 @@
     width: 100%;
     max-width: 800px;
     height: 480px;
-    border: 2px solid black;
-    background-color: lightgrey;
+    background-image: url("../pictures/bg_gradient.png");
+    background-repeat: repeat-y;
 
 }
 
@@ -88,24 +88,19 @@
     margin-left: 30px;
 }
 
-#map{
-    margin: 45px;
+#mapButton{
+    margin-top: 15px;
+    margin-left: 195px;
     width: auto;
     height: 40px;
     line-height: 40px;
-    border: 2px solid black;
-    border-radius: 4px;
     text-align: center;
-    background-color: green;
+    background-image: url("../pictures/button_map.png");
+    background-repeat: repeat-y;
 }
 
 a{
     text-decoration: none;
     color: black;
     font-size: 25px;
-}
-
-hr{
-    border: solid black 2px;
-    width: 798px;
 }
