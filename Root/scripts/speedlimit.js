@@ -8,7 +8,7 @@ function viewSpeed(index) {
         return;
     }
     if(data[index].name == "vehicle_speed" && data[index].value != 0){
-        pent_tall = Math.round((data[index].value*1.609344)*10)/10;
+        pent_tall = Math.round((data[index].value*1.609344));
         document.getElementById("car-speed").innerHTML = pent_tall;
         setTimeout(function(){
             viewSpeed(index+1);
