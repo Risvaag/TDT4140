@@ -57,11 +57,14 @@ function initMap()
 		{
 			//sets the style of the buttons (doesn't seem to work propperly)
 			//TODO look into this
-			style: google.maps.ZoomControlStyle.DEFAULT,
+			//Did look into it, it's a matter of a deprecated alternative, was available in v3.21
+			//but is gone with v3.22 (an opt out exists if it is needed)
+			style: google.maps.ZoomControlStyle.LARGE,
 			//sets the position on the screen for the zoom buttons
-			position: google.maps.ControlPosition.LEFT_TOP
+			position: google.maps.ControlPosition.TOP_RIGHT
 		}
 	});
+	//OBS this is terrible, it's just a test solution
 }
 			
 function setLat(x)

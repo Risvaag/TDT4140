@@ -5,7 +5,21 @@ html,body
 	margin: 0;
 	padding: 0;
 }
+
+#container
+{
+	height: 100%;
+	position: relative;
+}
+
 #map
 {
 	height: 100%;
+}
+
+#link
+{
+	top: 0;
+	left: 0;
+	position: absolute;
 }
