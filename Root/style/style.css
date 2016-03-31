@@ -6,8 +6,8 @@
 
 #main-content{
     width: 100%;
-    max-width: 800px;
-    height: 480px;
+    max-width: 640px;
+    height: 460px;
     background-image: url("../pictures/bg_gradient.png");
     background-repeat: repeat-y;
 
