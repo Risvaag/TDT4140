@@ -87,19 +87,22 @@
     width: 12vw;
     display: inline-block;
     font-size: 1em !important;
-    left: -3em;
+    left: -4vw;
+    top: -4vh;
     position: relative;
 }
 
 .gasStation{
     text-align: center;
     width: 12vw;
+    top: -4vh;
+    position: relative;
     display: inline-block;
 }
 
 #mapButton{
+    top: -7vh;
     width: 10vw;
     position: relative;
     left: 55%;
-    top: -5%;
 }
