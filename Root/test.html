@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!--Pretty damn sure we won't need a tilte but fuck it right?-->
-		<title> This shit will be obsolete right??</title>
-		<meta name="viewport" content="inital-scale=1.0">
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/css.css">
-		<script src="javascript/script.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3M5OlC0zK0yLOKBBLmwEcfWGxc0NT-hM&callback=initMap" async defer> 
-		</script>
-	</head>
-	<body>
-		<div id="container">
-			<div id="map">
-			</div>
-			<div id="link">
-				<!--With and height can be set in here (just add "width='x'" or "height='y'" to set them-->
-				<input type="image" src="pictures/button_back.png" onclick="window.location='index.html';" />
-			</div>
-		</div>
-	</body>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Searchbox</title>
+    <link rel="stylesheet" href="style/styleMapDirections.css">
+
+</head>
+<body>
+<div id="map"></div>
+
+<div id="right-panel">
+  <p>Total Distance: <span id="total"></span></p>
+</div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfQP4Jo_82FyIosmR28DOy07sjNk5Rneo&callback=initMap&libraries=places,visualization" async defer></script>
+
+
+<script src="scripts/testSearch.js"> </script>
+
+</body>
 </html>
