@@ -66,7 +66,7 @@ function initMap() {
 function performSearch() {
   var request = {
     bounds: map.getBounds(),
-    keyword: 'gas station'
+    keyword: 'gas_station'
 
   };
   service.radarSearch(request, callback);
