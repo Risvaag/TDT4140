@@ -106,3 +106,10 @@
     position: relative;
     left: 55%;
 }
+
+#temp{
+    text-align: center;
+    width: 10vw;
+    display: inline-block;
+    
+}
