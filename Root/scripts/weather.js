@@ -4,10 +4,10 @@ var callbackFunction = function(data) {
         //alert(wind.chill);
         var temp = parseInt(data.query.results.channel.item.condition.temp);
         var text = data.query.results.channel.item.condition.text;
-        document.getElementById('temp').innerHTML = (temp-32)/1.8;
+        document.getElementById('temp').innerHTML = ((temp-32)/1.8).toFixed(1) + "°C";
         document.getElementById('weatherText').innerHTML = text;
 
     } else {
-        document.getElementById('temp').innerHTML = "ingen værinfo tiljengelig";
+        
     }
 };
