@@ -34,14 +34,19 @@ function initAutocomplete() {
         title: "Your position"
     });
 
-    // Create the search box and link it to the UI element.
+    //Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
+    document.getElementById("pac-input").value = "bensinstasjon";
+
+    console.log(input.value);
+
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function () {
         searchBox.setBounds(map.getBounds());
+
     });
 
     var position = navigator.geolocation.getCurrentPosition(function (position) {
@@ -51,6 +56,13 @@ function initAutocomplete() {
         return coord;
     });
 
+    var textsearch = new google.maps.places.TextSearchRequest(function () {
+        var request = {
+            location: position,
+            radius: 5000,
+            type: "gas_station"
+        }
+    });
 
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -66,10 +78,11 @@ function initAutocomplete() {
         mapTypeId: google.maps.MapTypeId.ROADMAP //sets type of map Options:ROADMAP, SATELLITE, HYBRID, TERRIAN
     };
 
+
     var markers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
-    searchBox.addListener('places_changed', function () {
+    textsearch.addListener('places_changed',    function () {
         var places = searchBox.getPlaces();
         console.log(input.value);
 
@@ -107,7 +120,7 @@ function initAutocomplete() {
                 map: map,
                 icon: icon,
                 title: place.name,
-                position: place.geometry.location,
+                position: place.geometry.location
             }));
 
             if (place.geometry.viewport) {
