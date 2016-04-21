@@ -39,6 +39,7 @@ function initMap() {
         }]
     });
 
+<<<<<<< HEAD
     var yourPosition = new google.maps.Marker({
         map: map,
         title: "Your position"
@@ -46,6 +47,8 @@ function initMap() {
 
     infoWindow = new google.maps.InfoWindow({map: map, title: "you"});
     infoWindow.setContent("you are not here!");
+=======
+>>>>>>> dafaf4827c7d7746efcab0d4239853bdd89c9a2a
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -58,11 +61,24 @@ function initMap() {
         }, function () {
             handleLocationError(true, yourPosition, map.getCenter());
         });
+<<<<<<< HEAD
     } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
+=======
+    }
+//    console.log(positionStartPoint + " yoyoyo");
+
+    var yourPosition = new google.maps.Marker({
+        map: map,
+        title: "Your position"
+    });
+
+
+    infoWindow = new google.maps.InfoWindow();
+>>>>>>> dafaf4827c7d7746efcab0d4239853bdd89c9a2a
     service = new google.maps.places.PlacesService(map);
 
     var directionsService = new google.maps.DirectionsService;
@@ -133,7 +149,11 @@ function addMarker(place) {
 }
 
 /*window.onload = function(){
+<<<<<<< HEAD
     setInterval(initMap, 3600);
+=======
+    setInterval(initMap, 2600);
+>>>>>>> dafaf4827c7d7746efcab0d4239853bdd89c9a2a
     console.log("heihei");
 
 };*/
