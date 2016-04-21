@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>CarHub Map</title>
+    <link rel="stylesheet" href="style/styleMapDirections.css"> 
+
+</head>
+<body>
+<div id="map"></div>
+
+<div id="right-panel">
+  <p>Total Distance:</d><span id="total"></span></p>
+</div>
+<!-- Replace the value of the key parameter with your own API key.
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places,visualization&v=3.exp"></script>
+-->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfQP4Jo_82FyIosmR28DOy07sjNk5Rneo&callback=initMap&libraries=places,visualization" async defer></script>
+<script src="scripts/mapWithGasStations.js"> </script>
+
+</body>
+</html>
