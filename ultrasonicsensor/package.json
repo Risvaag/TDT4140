@@ -1,0 +1,20 @@
+{
+  "name": "sensor",
+  "version": "0.10.29",
+  "description": "test run sensor",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TDT4110"
+  },
+  "keywords": [
+    "testSensor"
+  ],
+  "author": "Andreas",
+  "license": "ISC"
+}
