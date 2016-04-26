@@ -5,7 +5,7 @@ var fs = require("fs");
 var path = require("path");
 var jsdom = require("jsdom");
 
-var htmlSource = fs.readFileSync("index.html", "utf8");
+var htmlSource = fs.readFileSync("../index.html", "utf8");
 
 
 
