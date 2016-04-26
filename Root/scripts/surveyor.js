@@ -46,11 +46,11 @@ var print = function(distances) {
     if (distance < 0) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
-//        process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
+        process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
 
         call_jsdom(htmlSource, function (window) {
             var $ = window.$;
-            $("#rearDistance").text(process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm'));
+            $("#rearDistance").text(distance.toFixed(2));
             console.log(documentToSource(window.document));
 });
     }
