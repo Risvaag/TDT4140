@@ -1,12 +1,12 @@
 var statistics = require('math-statistics');
 var usonic = require('r-pi-usonic');
 
-//JSDOM SHIT
+/*//JSDOM SHIT 
 var fs = require("fs");
 var path = require("path");
 var jsdom = require("jsdom");
 var htmlSource = fs.readFileSync("../index.html", "utf-8");
-
+*/
 
 var init = function(config) {
     usonic.init(function (error) {
@@ -46,18 +46,18 @@ var print = function(distances) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
         process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
-        
+        /*
         //JSDOM SHIT
         call_jsdom(htmlSource, function (window) {
         var $ = window.$;
         $("rearDistance").text(distance.toFixed(2));
 
         console.log(documentToSource(window.document));
-    });
+    });*/
     }
-};
+//};
 
-
+/*
 // JSDOM shit ******
 function documentToSource(doc) {
     // The non-standard window.document.outerHTML also exists,
@@ -84,7 +84,7 @@ function call_jsdom(source, callback) {
     );
 }
 
-//JSDOM ends here *******
+//JSDOM ends here ********/
 
 init({
     echoPin: 15, //Echo pin
