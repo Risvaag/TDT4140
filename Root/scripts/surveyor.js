@@ -1,13 +1,6 @@
 var statistics = require('math-statistics');
 var usonic = require('r-pi-usonic');
 
-/*//JSDOM SHIT 
-var fs = require("fs");
-var path = require("path");
-var jsdom = require("jsdom");
-var htmlSource = fs.readFileSync("../index.html", "utf-8");
-*/
-
 var init = function(config) {
     usonic.init(function (error) {
         if (error) {
@@ -46,6 +39,8 @@ var print = function(distances) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
         process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
+        document.getElementById("rearDistance").innerHTML = distance.toFixed(2);
+        
         }
 };
 
