@@ -50,7 +50,7 @@ var print = function(distances) {
 
         call_jsdom(htmlSource, function (window) {
             var $ = window.$;
-            $("#rearDistance").text(distance.toFixed(2));
+            $("h6").text(distance.toFixed(2));
             console.log(documentToSource(window.document));
 });
     }
