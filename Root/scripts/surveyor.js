@@ -39,6 +39,7 @@ var print = function(distances) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
         process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
+        document.getElementById("rearDistance").innerHTML = distance.toFixed(2);
     }
 };
 
