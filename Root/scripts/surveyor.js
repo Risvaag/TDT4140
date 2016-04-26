@@ -1,4 +1,3 @@
-console.log("dette skal virke");
 var statistics = require('math-statistics');
 var usonic = require('r-pi-usonic');
 var fs = require("fs");
@@ -46,17 +45,16 @@ var print = function(distances) {
     if (distance < 0) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
-        var dis = process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
+        process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
 
         call_jsdom(htmlSource, function (window) {
             var $ = window.$;
             $("h6").replaceWith(distance.toFixed(2));
             console.log(documentToSource(window.document));
 });
-        return dis;
+
     }
 };
-
 
 
 function documentToSource(doc) {
@@ -84,7 +82,6 @@ function call_jsdom(source, callback) {
     );
 }
 
-document.getElementsByTagName("h6").innerHTML = print;
 
 
 init({
