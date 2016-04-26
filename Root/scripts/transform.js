@@ -9,8 +9,7 @@ var jsdom = require("jsdom");
 
 var htmlSource = fs.readFileSync("dummy.html", "utf8");
 call_jsdom(htmlSource, function (window) {
-    var $ = window.$;
-
+    var $ = require('jquery')(window);
     var title = $("title").text();
     $("h1").text(title);
 
