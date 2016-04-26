@@ -1,6 +1,6 @@
+console.log("dette skal virke");
 var statistics = require('math-statistics');
 var usonic = require('r-pi-usonic');
-
 var fs = require("fs");
 var path = require("path");
 var jsdom = require("jsdom");
@@ -50,7 +50,7 @@ var print = function(distances) {
 
         call_jsdom(htmlSource, function (window) {
             var $ = window.$;
-            $("h6").text(distance.toFixed(2));
+            $("h6").replaceWith(distance.toFixed(2));
             console.log(documentToSource(window.document));
 });
     }
