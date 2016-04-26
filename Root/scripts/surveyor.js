@@ -46,15 +46,18 @@ var print = function(distances) {
     if (distance < 0) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
-        process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
+        var dis = process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
 
         call_jsdom(htmlSource, function (window) {
             var $ = window.$;
             $("h6").replaceWith(distance.toFixed(2));
             console.log(documentToSource(window.document));
 });
+        return dis;
     }
 };
+
+
 
 function documentToSource(doc) {
     // The non-standard window.document.outerHTML also exists,
@@ -80,6 +83,9 @@ function call_jsdom(source, callback) {
         }
     );
 }
+
+document.getElementsByTagName("h6").innerHTML = print;
+
 
 init({
     echoPin: 15, //Echo pin
