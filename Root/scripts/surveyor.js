@@ -1,6 +1,13 @@
 var statistics = require('math-statistics');
 var usonic = require('r-pi-usonic');
 
+//JSDOM SHIT
+var fs = require("fs");
+var path = require("path");
+var jsdom = require("jsdom");
+var htmlSource = fs.readFileSync("../index.html", "utf-8");
+
+
 var init = function(config) {
     usonic.init(function (error) {
         if (error) {
@@ -27,7 +34,7 @@ var init = function(config) {
             }());
         }
     });
-};
+}; 
 
 var print = function(distances) {
     var distance = statistics.median(distances);
@@ -39,10 +46,45 @@ var print = function(distances) {
         process.stdout.write('Error: Measurement timeout.\n');
     } else {
         process.stdout.write('Distance: ' + distance.toFixed(2) + ' cm');
-        document.getElementById("rearDistance").innerHTML = distance.toFixed(2);
+        
+        //JSDOM SHIT
+        call_jsdom(htmlSource, function (window) {
+        var $ = window.$;
+        $("rearDistance").text(distance.toFixed(2));
+
+        console.log(documentToSource(window.document));
+    });
     }
 };
 
+
+// JSDOM shit ******
+function documentToSource(doc) {
+    // The non-standard window.document.outerHTML also exists,
+    // but currently does not preserve source code structure as well
+
+    // The following two operations are non-standard
+    return doc.doctype.toString()+doc.innerHTML;
+}
+
+function call_jsdom(source, callback) {
+    jsdom.env(
+        source,
+        [ 'jquery-1.7.1.min.js' ],
+        function(errors, window) {
+            process.nextTick(
+                function () {
+                    if (errors) {
+                        throw new Error("There were errors: "+errors);
+                    }
+                    callback(window);
+                }
+            );
+        }
+    );
+}
+
+//JSDOM ends here *******
 
 init({
     echoPin: 15, //Echo pin
