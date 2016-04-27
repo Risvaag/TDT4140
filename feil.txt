@@ -1,0 +1,54 @@
+npm WARN package.json sensor@0.10.29 No README data
+npm WARN deprecated r-pi-usonic@2.5.0: THIS PROJECT IS NO LONGER MAINTAINED by clebert
+npm WARN deprecated r-pi-gpio@3.0.0: THIS PROJECT IS NO LONGER MAINTAINED by clebert
+
+> r-pi-gpio@3.0.0 install /home/pi/java/TDT4140/ultrasonicsensor/node_modules/r-pi-usonic/node_modules/r-pi-gpio
+> node-gyp configure build
+
+make: Entering directory '/home/pi/java/TDT4140/ultrasonicsensor/node_modules/r-pi-usonic/node_modules/r-pi-gpio/build'
+  CXX(target) Release/obj.target/gpio/src/gpio.o
+  CXX(target) Release/obj.target/gpio/src/node_gpio.o
+In file included from ../src/node_gpio.cc:2:0:
+../../../../nan/nan.h:316:47: error: 'REPLACE_INVALID_UTF8' is not a member of 'v8::String'
+   static const unsigned kReplaceInvalidUtf8 = v8::String::REPLACE_INVALID_UTF8;
+                                               ^
+gpio.target.mk:83: recipe for target 'Release/obj.target/gpio/src/node_gpio.o' failed
+make: *** [Release/obj.target/gpio/src/node_gpio.o] Error 1
+make: Leaving directory '/home/pi/java/TDT4140/ultrasonicsensor/node_modules/r-pi-usonic/node_modules/r-pi-gpio/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/share/node-gyp/lib/build.js:267:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:98:17)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (child_process.js:809:12)
+gyp ERR! System Linux 4.1.19-v7+
+gyp ERR! command "nodejs" "/usr/bin/node-gyp" "configure" "build"
+gyp ERR! cwd /home/pi/java/TDT4140/ultrasonicsensor/node_modules/r-pi-usonic/node_modules/r-pi-gpio
+gyp ERR! node -v v0.10.29
+gyp ERR! node-gyp -v v0.12.2
+gyp ERR! not ok 
+npm WARN This failure might be due to the use of legacy binary "node"
+npm WARN For further explanations, please read
+/usr/share/doc/nodejs/README.Debian
+ 
+npm ERR! r-pi-gpio@3.0.0 install: `node-gyp configure build`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the r-pi-gpio@3.0.0 install script.
+npm ERR! This is most likely a problem with the r-pi-gpio package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-gyp configure build
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls r-pi-gpio
+npm ERR! There is likely additional logging output above.
+
+npm ERR! System Linux 4.1.19-v7+
+npm ERR! command "/usr/bin/nodejs" "/usr/bin/npm" "install" "r-pi-usonic" "--save"
+npm ERR! cwd /home/pi/java/TDT4140/ultrasonicsensor
+npm ERR! node -v v0.10.29
+npm ERR! npm -v 1.4.21
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /home/pi/java/TDT4140/ultrasonicsensor/npm-debug.log
+npm ERR! not ok code 0
