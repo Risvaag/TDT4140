@@ -5,6 +5,7 @@
     <title>CarHub</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="Python27/Lib/site-packages/pico/client.js"></script>
 </head>
 <body onload="viewData(0)">
     <div id="main-content">
@@ -33,7 +34,7 @@
 
             <div class="sensor" >
                 <p class="text">REAR</p>
-                    <h6 id = rearDistance>distance</h6>
+                    <p id="message"></p>
             </div>
 
 
@@ -55,7 +56,6 @@
 
             <a href="mapFiniti.html"><img src="pictures/button_map.png" id="mapButton"/></a>
 
-
         </div>
 
         <div id ="bottom-right">
@@ -66,8 +66,17 @@
                 <div id="temp"></div>
             </div>
         </div>
-
     </div>
+
+        <script type="text/javascript">
+        pico.load('Python27/Lib/site-packages/pico/distance');
+        pico.main = function() {
+            var displayMessage = function(message){
+               document.getElementById('message').innerHTML = message;
+           };
+           distance.hello(displayMessage);
+        }
+    </script>
     <script src="scripts/weather.js"></script>
     <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='(63,10)')&format=json&callback=callbackFunction"></script>
     <script src="scripts/getData.js"></script>
