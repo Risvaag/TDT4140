@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>CarHub</title>
     <link rel="stylesheet" href="../style/style.css">
-    <script src="../scripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="client.js"></script>
 </head>
 <body onload="viewData(0)">
     <div id="main-content">
@@ -68,8 +66,17 @@
         </div>
     </div>
 
+    <script src="../scripts/weather.js"></script>
+    <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='(63,10)')&format=json&callback=callbackFunction"></script>
+    <script src="../scripts/getData.js"></script>
+    <script type="text/javascript" src="../scripts/sampledata.js"></script>
+    <script src="../scripts/surveyor.js"></script>
+
+    <script src="../scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+
         <script type="text/javascript">
-        pico.load('Python27/Lib/site-packages/pico/distance');
+        pico.load('distance');
         pico.main = function() {
             var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
@@ -77,10 +84,5 @@
            distance.hello(displayMessage);
         }
     </script>
-    <script src="../scripts/weather.js"></script>
-    <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='(63,10)')&format=json&callback=callbackFunction"></script>
-    <script src="../scripts/getData.js"></script>
-    <script type="text/javascript" src="../scripts/sampledata.js"></script>
-    <script src="../scripts/surveyor.js"></script>
 </body>
 </html>
