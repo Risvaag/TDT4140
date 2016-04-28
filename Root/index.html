@@ -70,12 +70,12 @@
         </div>
     </div>
 
-        <script type="text/javascript">
-        distance = pico.load('distance.py');
+         <script type="text/javascript">
+        pico.load('distance');
         pico.main = function() {
             var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
-           };
+           }
            distance.hello(displayMessage);
         }
     </script>
