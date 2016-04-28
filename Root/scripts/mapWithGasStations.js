@@ -44,8 +44,6 @@ function initMap() {
         title: "Your position"
     });
 
-    infoWindow = new google.maps.InfoWindow({map: map, title: "you"});
-    infoWindow.setContent("you are not here!");
 
 
     if (navigator.geolocation) {
