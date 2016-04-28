@@ -20,7 +20,7 @@ function getLimit()
 		x.innerHTML = '<img src="pictures/SpeedLimit'+Text+'.png" alt="Speedlimit">';
 	}
 	
-	//===========================\\
+	//===========================
 	function getLocation() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(getSpeedlimit);
@@ -28,6 +28,7 @@ function getLimit()
 			x.innerHTML = "Geolocation is not supported by this browser.";
 		}
 	}
-	getLocation();
+	
+	window.setInterval(function(){getLocation()}, 5000);
 }
 
