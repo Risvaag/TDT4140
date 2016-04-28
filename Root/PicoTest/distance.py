@@ -8,7 +8,11 @@ GPIO.setmode(GPIO.BCM)
 
 TRIG = 14
 ECHO = 15
+
 def hello():
+    return "heii"
+
+def helloooo():
     #print "Distance measurement in progress" 
 
     GPIO.setup(TRIG,GPIO.OUT)

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>CarHub</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../scripts/jquery-1.7.1.min.js"></script>
     <!--Kommer dette med-->
     <script type="text/javascript" src="client.js"></script>
-	<script src="scripts/getLimit.js"></script>
+	<script src="../scripts/getLimit.js"></script>
 </head>
 <body onload="viewData(0)">
     <div id="main-content">
@@ -17,7 +17,7 @@
             Bør vel strengt tatt ha ett ikon til hver enkelt fartsgrense.
             Da kan skiltet byttes etter faktisk fartsgrense.
              -->
-            <div id="speedLimit" class="icon"><img src="pictures/SpeedLimit.png" alt="Speedlimit"></div>
+            <div id="speedLimit" class="icon"><img src="../pictures/SpeedLimit.png" alt="Speedlimit"></div>
 
             <div id = "speed">
                 <p class = "text">Your speed</p>
@@ -27,11 +27,11 @@
         </div>
 
         <div id ="top-right">
-            <div class="icon"><img src="pictures/Sensor.png" alt="Sensor"></div>
+            <div class="icon"><img src="../pictures/Sensor.png" alt="Sensor"></div>
 
             <div class ="sensor">
                 <p class = "text">FRONT</p>
-                    <p id="frontDistance">3m</p>
+                    <p id="frontDistance">distance</p>
             </div>
 
             <div class="sensor" >
@@ -44,7 +44,7 @@
         <hr>
 
         <div id ="bottom-left">
-            <div class="icon"><img src="pictures/GasSign.png" alt="gasSign"></div>
+            <div class="icon"><img src="../pictures/GasSign.png" alt="gasSign"></div>
 
             <div class ="fuel">
                 <p class = "text">Fuel Level</p>
@@ -56,16 +56,15 @@
                 <p id = "nearestGasStation">700m</p>
             </div>
 
-            <a href="mapFiniti.html"><img src="pictures/button_map.png" id="mapButton"/></a>
+            <a href="../mapFiniti.html"><img src="../pictures/button_map.png" id="mapButton"/></a>
 
         </div>
 
         <div id ="bottom-right">
-            <div class="icon"><img src="pictures/Weather.png" alt="Weather"></div>
+            <div class="icon"><img src="../pictures/Weather.png" alt="Weather"></div>
             
             <div id="weather-info" class="text">
                 <div id="weatherText"></div>
-                <br>
                 <div id="temp"></div>
             </div>
         </div>
@@ -79,9 +78,9 @@
            distance.hello(displayMessage);
         });
     </script>
-    <script src="scripts/weather.js"></script>
+    <script src="../scripts/weather.js"></script>
     <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='(63,10)')&format=json&callback=callbackFunction"></script>
-    <script src="scripts/getData.js"></script>
-    <script type="text/javascript" src="scripts/sampledata.js"></script>
+    <script src="../scripts/getData.js"></script>
+    <script type="text/javascript" src="../scripts/sampledata.js"></script>
 </body>
 </html>
