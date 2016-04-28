@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BCM)
 TRIG = 14
 ECHO = 15
 def hello():
-    print "Distance measurement in progress" 
+    #print "Distance measurement in progress" 
 
     GPIO.setup(TRIG,GPIO.OUT)
     GPIO.setup(ECHO,GPIO.IN)
@@ -19,7 +19,7 @@ def hello():
     while revers == 1:
 
         GPIO.output(TRIG,0)
-        print "waiting for sensor"
+     #   print "waiting for sensor"
         time.sleep(0.5)
 
         GPIO.output(TRIG,1)

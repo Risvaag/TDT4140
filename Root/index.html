@@ -5,7 +5,8 @@
     <title>CarHub</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="scripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="Python27/Lib/site-packages/pico/client.js"></script>
+    <!--Kommer dette med-->
+    <script type="text/javascript" src="PicoTest/client.js"></script>
 	<script src="scripts/getLimit.js"></script>
 </head>
 <body onload="viewData(0)">
@@ -47,12 +48,12 @@
 
             <div class ="fuel">
                 <p class = "text">Fuel Level</p>
-                <p id="CurrentFuelLevel">distance</p>
+                <p id="CurrentFuelLevel">82%</p>
             </div>
 
             <div class="gasStation" >
                 <p class="text">Gas Station</p>
-                <p id = "nearestGasStation">distance</p>
+                <p id = "nearestGasStation">700m</p>
             </div>
 
             <a href="mapFiniti.html"><img src="pictures/button_map.png" id="mapButton"/></a>
@@ -70,7 +71,7 @@
     </div>
 
         <script type="text/javascript">
-        pico.load('distance');
+        pico.load('distance.py');
         pico.main = function() {
             var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
