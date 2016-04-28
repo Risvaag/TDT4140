@@ -4,8 +4,7 @@ html, body {
     padding: 0;
 }
 #map {
-    height: 480px;
-    width: 800px;
+    height: 100%;
 }
 .controls {
     margin-top: 10px;
@@ -51,4 +50,17 @@ html, body {
 }
 #target {
     width: 345px;
+}
+
+#container
+{
+	height: 100%;
+	position: relative;
+}
+
+#link
+{
+	top: 0;
+	left: 0;
+	position: absolute;
 }

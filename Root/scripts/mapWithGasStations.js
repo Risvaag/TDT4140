@@ -28,16 +28,58 @@ var positionStartPoint = navigator.geolocation.getCurrentPosition(function (posi
 
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -33.867, lng: 151.206},
-        zoom: 14,
-        styles: [{
-            stylers: [{visibility: 'simplified'}]
-        }, {
-            elementType: 'labels',
-            stylers: [{visibility: 'off'}]
-        }]
-    });
+	var myStyles = 
+	//OBS these are arrays of styles so if you want to add one add in the style of "transit"
+	[
+		{
+			featureType: "poi",
+			elementType: "labels",
+			stylers: [{visibility: "off"}]
+		},
+		{
+			featureType: "transit.station",
+			elementType: "labels",
+			stylers: [{visibility: "off"}]
+		}
+	]
+	
+    map = new google.maps.Map(document.getElementById("map"),
+	{
+		//sets where the map starts
+		//TODO make this your current coordniates
+		center: {lat: 63.415, lng: 10.403},
+		//sets the starting zoom level (higher number = closer to the ground)
+		zoom: 15,
+		//as close as we allow them to zoom in
+		maxZoom: 19,
+		//as far out as we allow them to zoom
+		minZoom: 9,
+		//can't click on the screen to zoom in
+		disableDoubleClickZoom: true,
+		//no using keyboard inputs to controll the map
+		keyboardShortcuts: false,
+		//Turns of the UI
+		disableDefaultUI: true,
+		//prevents draging the map to change it's current location
+		draggable: false,
+		//prevents scrolling with the mouswheel
+		scrollwheel: false,
+		//uses the style set above in "myStlyes" (currently hides all pois and lables)
+		styles: myStyles,
+		//reintroduces the zoom in and out buttons
+		zoomControl: true,
+		//settings for aforementioned buttons
+		zoomControlOptions:
+		{
+			//sets the style of the buttons (doesn't seem to work propperly)
+			//TODO look into this
+			//Did look into it, it's a matter of a deprecated alternative, was available in v3.21
+			//but is gone with v3.22 (an opt out exists if it is needed)
+			style: google.maps.ZoomControlStyle.LARGE,
+			//sets the position on the screen for the zoom buttons
+			position: google.maps.ControlPosition.TOP_RIGHT
+		}
+	});
 
     var yourPosition = new google.maps.Marker({
         map: map,

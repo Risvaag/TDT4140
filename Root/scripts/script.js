@@ -33,7 +33,7 @@ function initMap()
 		//TODO make this your current coordniates
 		center: {lat: 63.415, lng: 10.403},
 		//sets the starting zoom level (higher number = closer to the ground)
-		zoom: 17,
+		zoom: 15,
 		//as close as we allow them to zoom in
 		maxZoom: 19,
 		//as far out as we allow them to zoom
