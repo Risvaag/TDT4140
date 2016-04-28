@@ -50,6 +50,10 @@ def hello():
     '''    
 GPIO.cleanup()
 
+output = open("output.js", "w")
+
+while(true):
+    output.write("var distance = "hello())
 
 
 
